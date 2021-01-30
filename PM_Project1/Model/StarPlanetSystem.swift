@@ -17,6 +17,7 @@ class StarPlanetSystem {
     var radiusLimit: UInt?
     
     weak var galaxy: Galaxy?
+    weak var delegate: GalaxyDelegate?
     
     init(name: String, starMassLimit: UInt, starRadiusLimit: UInt) {
         self.name = name
@@ -44,3 +45,17 @@ extension StarPlanetSystem: TimerHandler {
         star.timerTick()
     }
 }
+
+extension StarPlanetSystem: BlackholeDelegate {
+    func starToBlackholeTransformation(star: Star) {
+        planets = []
+        delegate?.starBecomeBlackholeFinally(starPlanetSystem: self)
+    }
+}
+
+extension StarPlanetSystem: Equatable {
+    static func == (lhs: StarPlanetSystem, rhs: StarPlanetSystem) -> Bool {
+        lhs.name == rhs.name
+    }
+}
+

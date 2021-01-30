@@ -19,6 +19,7 @@ class Galaxy {
     var age: UInt = 0
     var type: GalaxyType = GalaxyType.allCases.randomElement()!
     var starPlanetSystems: [StarPlanetSystem] = []
+    var blackholes: [Star] = []
     var starMassLimit: UInt
     var starRadiusLimit: UInt
     weak var universe: Universe?
@@ -29,13 +30,6 @@ class Galaxy {
         self.starRadiusLimit = universe?.starRadiusLimit ?? 101
     }
     
-}
-
-extension Galaxy {
-    #warning("add interactive between galaxies")
-    func merge(with galaxy: Galaxy) {
-        
-    }
 }
 
 extension Galaxy: WeightProtocol {
@@ -59,5 +53,18 @@ extension Galaxy: TimerHandler {
         starPlanetSystems.forEach {
             $0.timerTick()
         }
+    }
+}
+
+extension Galaxy: GalaxyDelegate {
+    func starBecomeBlackholeFinally(starPlanetSystem: StarPlanetSystem) {
+        guard let index = starPlanetSystems.firstIndex(of: starPlanetSystem) else { return }
+        starPlanetSystems.remove(at: index)
+    }
+}
+
+extension Galaxy: Equatable {
+    static func == (lhs: Galaxy, rhs: Galaxy) -> Bool {
+        return lhs.name == rhs.name
     }
 }

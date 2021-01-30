@@ -15,12 +15,38 @@ class Universe {
     var starMassLimit: UInt
     var starRadiusLimit: UInt
     
-    init(name: String, starMassLimit: UInt, starRadiusLimit: UInt) {
+    private var timeInterval: TimeInterval = 1.0
+    private var timer: UniverseTimer!
+    
+    init(timer: UniverseTimer, name: String, starMassLimit: UInt, starRadiusLimit: UInt) {
+        self.timer = timer
+        timer.eventHandler = {
+            print(Date())
+        }
+        timer.resume()
         self.name = name
         self.starMassLimit = starMassLimit
         self.starRadiusLimit = starRadiusLimit
     }
     
+}
+
+
+extension Universe {
+    func merge() {
+        var oldGalaxies = galaxies.filter({ $0.age > 180 })
+        
+        if oldGalaxies.count > 1 {
+            oldGalaxies.shuffle()
+            let first = oldGalaxies[0]
+            let second = oldGalaxies[1]
+            
+            guard let index = galaxies.firstIndex(of: second) else { return }
+            galaxies.remove(at: index)
+            first.starPlanetSystems.append(contentsOf: second.starPlanetSystems)
+            first.starPlanetSystems.removeSubrange(0...first.starPlanetSystems.count)
+        }
+    }
 }
 
 extension Universe: WeightProtocol {
@@ -39,7 +65,7 @@ extension Universe: TimerHandler {
         }
         
         if age.isMultiple(of: 30) {
-            #warning("implement merging of galaxies")
+            merge()
         }
         
         galaxies.forEach {

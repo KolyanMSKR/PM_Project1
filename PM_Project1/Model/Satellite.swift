@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Satellite {
+class Satellite: WeightProtocol {
     
     var name: String
     var age: UInt = 0

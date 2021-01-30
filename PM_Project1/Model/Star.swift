@@ -37,12 +37,12 @@ class Star {
     var starRadiusLimit: UInt
     
     weak var starPlanetSystem: StarPlanetSystem?
+    weak var delegate: BlackholeDelegate?
     
     init(name: String, starMassLimit: UInt, starRadiusLimit: UInt) {
         self.name = name
-#warning("init mass and radius from universe init()")
-        self.starMassLimit = 101
-        self.starRadiusLimit = 101
+        self.starMassLimit = starMassLimit
+        self.starRadiusLimit = starRadiusLimit
     }
     
 }
@@ -63,7 +63,7 @@ extension Star: TimerHandler {
                     return
                 } else {
                     stage = .blackhole
-                    #warning("implement star becoming blackhole")
+                    delegate?.starToBlackholeTransformation(star: self)
                 }
             case .dwarf, .blackhole: return
             }

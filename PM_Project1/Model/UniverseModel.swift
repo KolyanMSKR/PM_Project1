@@ -9,10 +9,11 @@ import Foundation
 
 class UniverseModel {
     
-    var universe: Universe
+//    var universe: Universe
     
-    init(universeName: String, starMassLimit: UInt = 101, starRadiusLimit: UInt = 101) {
-        self.universe = Universe(name: universeName, starMassLimit: starMassLimit, starRadiusLimit: starRadiusLimit)
-    }
+    #warning("add timer")
+//    init(universeName: String, starMassLimit: UInt = 101, starRadiusLimit: UInt = 101) {
+//        self.universe = Universe(name: universeName, starMassLimit: starMassLimit, starRadiusLimit: starRadiusLimit)
+//    }
     
 }

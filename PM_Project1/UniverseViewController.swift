@@ -12,28 +12,16 @@ class UniverseViewController: UIViewController, UICollectionViewDelegate {
     private var collectionView: UICollectionView!
     
     private var timeInterval: TimeInterval = 1.0
-    private lazy var timer = UniverseTimer(timeInterval: timeInterval)
-    
-    
-    var times: [Date] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
-    
-    
+
+    var universe = Universe(timer: UniverseTimer(timeInterval: 1.0), name: "The only one", starMassLimit: 102, starRadiusLimit: 102)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         
-        timer.eventHandler = {
-            self.times.append(Date())
-        }
-        timer.resume()
+        print("Universe \(universe)")
+
     }
 
 }
@@ -41,7 +29,8 @@ class UniverseViewController: UIViewController, UICollectionViewDelegate {
 extension UniverseViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return times.count
+//        return times.count
+        20
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -50,10 +39,10 @@ extension UniverseViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniverseCell.cellID,
                                                       for: indexPath) as! UniverseCell
         
-        let formatter = DateFormatter()
-        formatter.timeStyle = .long
-        let time = formatter.string(from: times[indexPath.row])
-        cell.galaxyNameLabel.text = time
+//        let formatter = DateFormatter()
+//        formatter.timeStyle = .long
+//        let time = formatter.string(from: times[indexPath.row])
+//        cell.galaxyNameLabel.text = time
         
         return cell
     }
