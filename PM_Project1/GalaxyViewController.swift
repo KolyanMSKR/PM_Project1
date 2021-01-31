@@ -1,36 +1,31 @@
 //
-//  ViewController.swift
+//  GalaxyViewController.swift
 //  PM_Project1
 //
-//  Created by Admin on 1/16/21.
+//  Created by Admin on 1/31/21.
 //
 
 import UIKit
 
-class UniverseViewController: UIViewController {
-
+class GalaxyViewController: UIViewController, UICollectionViewDelegate {
+    
     private var collectionView: UICollectionView!
-
-    private let viewModel = UniverseViewModel()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         
-        viewModel.dataReload = { [weak self] in
-            DispatchQueue.main.async {
-                self?.collectionView.reloadData()
-            }
-        }
     }
     
 }
 
-extension UniverseViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension GalaxyViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.galaxiesCount
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -39,29 +34,25 @@ extension UniverseViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniverseCell.cellID,
                                                       for: indexPath) as! UniverseCell
         
-        cell.galaxyNameLabel.text = viewModel.galaxyName(for: indexPath)
+        
 
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
 }
 
-fileprivate extension UniverseViewController {
+fileprivate extension GalaxyViewController {
     
     private func setupCollectionView() {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
-        collectionView.register(UniverseCell.self, forCellWithReuseIdentifier: UniverseCell.cellID)
+        collectionView.register(GalaxyCell.self, forCellWithReuseIdentifier: GalaxyCell.cellID)
         self.collectionView = collectionView
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -91,16 +82,16 @@ fileprivate extension UniverseViewController {
 // ------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------------------
 
-class UniverseCell: UICollectionViewCell {
+class GalaxyCell: UICollectionViewCell {
     
-    static var cellID = "UniverseCell"
+    static var cellID = "GalaxyCell"
     
     let galaxyNameLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .yellow
+        self.backgroundColor = .green
         galaxyNameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(galaxyNameLabel)
         contentView.layer.borderWidth = 0.5

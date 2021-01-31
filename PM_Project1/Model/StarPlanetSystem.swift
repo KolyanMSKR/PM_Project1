@@ -23,6 +23,7 @@ class StarPlanetSystem {
         self.name = name
         self.star = Star(name: name, starMassLimit: starMassLimit, starRadiusLimit: starRadiusLimit)
         self.star.starPlanetSystem = self
+        print("star planet system has created in galaxy. \(galaxy?.name)")
     }
     
 }

@@ -28,6 +28,7 @@ class Galaxy {
         self.name = name
         self.starMassLimit = universe?.starMassLimit ?? 101
         self.starRadiusLimit = universe?.starRadiusLimit ?? 101
+        print("galaxy was created. \(name)")
     }
     
 }

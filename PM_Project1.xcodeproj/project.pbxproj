@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8446686725C6E302008A1D05 /* GalaxyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446686625C6E302008A1D05 /* GalaxyViewController.swift */; };
 		844F839225BD86190063829F /* WeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839125BD86190063829F /* WeightProtocol.swift */; };
 		844F839825BD86480063829F /* TimerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839725BD86480063829F /* TimerHandler.swift */; };
 		844F839B25BD92E40063829F /* UniverseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839A25BD92E40063829F /* UniverseModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8446686625C6E302008A1D05 /* GalaxyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyViewController.swift; sourceTree = "<group>"; };
 		844F839125BD86190063829F /* WeightProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightProtocol.swift; sourceTree = "<group>"; };
 		844F839725BD86480063829F /* TimerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHandler.swift; sourceTree = "<group>"; };
 		844F839A25BD92E40063829F /* UniverseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseModel.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				844F839425BD86250063829F /* Protocols */,
 				84564D4525B2B67500E6D747 /* Model */,
 				84564D2525B29C6100E6D747 /* UniverseViewController.swift */,
+				8446686625C6E302008A1D05 /* GalaxyViewController.swift */,
 				84564D2A25B29C6600E6D747 /* Assets.xcassets */,
 				84564D2C25B29C6600E6D747 /* LaunchScreen.storyboard */,
 				84564D2F25B29C6600E6D747 /* Info.plist */,
@@ -195,6 +198,7 @@
 				8456E02A25C5CF210044F861 /* GalaxyDelegate.swift in Sources */,
 				84564D2225B29C6100E6D747 /* AppDelegate.swift in Sources */,
 				844F839B25BD92E40063829F /* UniverseModel.swift in Sources */,
+				8446686725C6E302008A1D05 /* GalaxyViewController.swift in Sources */,
 				84564D3D25B2B60500E6D747 /* Planet.swift in Sources */,
 				8450EED925BDDB00005DB66E /* BlackholeDelegate.swift in Sources */,
 				844F839225BD86190063829F /* WeightProtocol.swift in Sources */,

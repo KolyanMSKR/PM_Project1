@@ -7,13 +7,52 @@
 
 import Foundation
 
-class UniverseModel {
+class UniverseViewModel {
     
-//    var universe: Universe
+    private var universe: Universe
+    private var galaxies: [Galaxy] {
+        universe.galaxies
+    }
     
-    #warning("add timer")
-//    init(universeName: String, starMassLimit: UInt = 101, starRadiusLimit: UInt = 101) {
-//        self.universe = Universe(name: universeName, starMassLimit: starMassLimit, starRadiusLimit: starRadiusLimit)
-//    }
+    var galaxiesCount: Int {
+        galaxies.count
+    }
+    
+    var dataReload: (() -> ())? {
+        get {
+            return universe.dataReload
+        }
+        
+        set {
+            universe.dataReload = newValue
+        }
+    }
+    
+    init(starMassLimit: UInt = 101, starRadiusLimit: UInt = 101) {
+        self.universe = Universe(timer: UniverseTimer(timeInterval: 1.0),
+                                 name: "The only one",
+                                 starMassLimit: starMassLimit,
+                                 starRadiusLimit: starRadiusLimit)
+    }
+    
+    func galaxyName(for indexPath: IndexPath) -> String {
+        return galaxies[indexPath.row].name
+    }
+    
+}
+
+class GalaxyViewModel {
+    
+    var galaxy: Galaxy
+    
+    var elementsCount: Int {
+        galaxy.starPlanetSystems.count + galaxy.blackholes.count
+    }
+    
+    init(galaxy: Galaxy) {
+        self.galaxy = galaxy
+    }
+    
+    
     
 }
