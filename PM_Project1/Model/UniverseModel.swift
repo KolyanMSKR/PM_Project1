@@ -39,20 +39,26 @@ class UniverseViewModel {
         return galaxies[indexPath.row].name
     }
     
+    func galaxyViewModel(for indexPath: IndexPath) -> GalaxyViewModel {
+        return GalaxyViewModel(galaxy: galaxies[indexPath.row])
+    }
+    
 }
 
 class GalaxyViewModel {
     
     var galaxy: Galaxy
     
-    var elementsCount: Int {
-        galaxy.starPlanetSystems.count + galaxy.blackholes.count
+    var starsCount: Int {
+        galaxy.starPlanetSystems.count
     }
     
     init(galaxy: Galaxy) {
         self.galaxy = galaxy
     }
     
-    
+    func starName(for indexPath: IndexPath) -> String {
+        return galaxy.starPlanetSystems[indexPath.row].name
+    }
     
 }

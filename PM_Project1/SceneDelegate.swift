@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UniverseViewController()
+        let navController = UINavigationController(rootViewController: UniverseViewController())
+        window?.rootViewController = navController
     }
     
     

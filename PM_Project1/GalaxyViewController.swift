@@ -11,7 +11,7 @@ class GalaxyViewController: UIViewController, UICollectionViewDelegate {
     
     private var collectionView: UICollectionView!
     
-    
+    var viewModel: GalaxyViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +25,16 @@ class GalaxyViewController: UIViewController, UICollectionViewDelegate {
 extension GalaxyViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.starsCount ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UniverseCell.cellID,
-                                                      for: indexPath) as! UniverseCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalaxyCell.cellID,
+                                                      for: indexPath) as! GalaxyCell
         
-        
+        cell.galaxyNameLabel.text = viewModel?.starName(for: indexPath)
 
         return cell
     }

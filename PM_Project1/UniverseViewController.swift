@@ -45,7 +45,9 @@ extension UniverseViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = GalaxyViewController()
+        vc.viewModel = viewModel.galaxyViewModel(for: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

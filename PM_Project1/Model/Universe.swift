@@ -39,10 +39,9 @@ class Universe {
     
 }
 
-
 extension Universe {
     func merge() {
-        var oldGalaxies = galaxies.filter({ $0.age > 14 })
+        var oldGalaxies = galaxies.filter({ $0.age > 180 })
         print("MERGE BEGIN")
         if oldGalaxies.count > 1 {
             oldGalaxies.shuffle()
@@ -74,7 +73,7 @@ extension Universe: TimerHandler {
             galaxies.append(galaxy)
         }
         
-        if age.isMultiple(of: 12) {
+        if age.isMultiple(of: 30) {
             merge()
         }
         
