@@ -33,4 +33,8 @@ class GalaxyViewModel {
         return galaxy.starPlanetSystems[indexPath.row].name
     }
     
+    func starPlanetSystemMass(for indexPath: IndexPath) -> UInt {
+        return galaxy.starPlanetSystems[indexPath.row].mass
+    }
+    
 }

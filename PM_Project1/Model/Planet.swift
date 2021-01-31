@@ -23,7 +23,6 @@ class Planet {
     var temperature: Int = Int.random(in: 1...100)
     var radius: UInt = UInt.random(in: 1...100)
     var satellites: [Satellite] = []
-    weak var hostStar: Star?
     
     init(name: String) {
         self.name = name

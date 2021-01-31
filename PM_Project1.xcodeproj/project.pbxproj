@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8446686725C6E302008A1D05 /* GalaxyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446686625C6E302008A1D05 /* GalaxyViewController.swift */; };
 		8446686A25C70765008A1D05 /* GalaxyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446686925C70765008A1D05 /* GalaxyViewModel.swift */; };
+		8446687125C71ADD008A1D05 /* UniverseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446687025C71ADD008A1D05 /* UniverseCell.swift */; };
+		8446687625C71B0C008A1D05 /* GalaxyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446687525C71B0C008A1D05 /* GalaxyCell.swift */; };
 		844F839225BD86190063829F /* WeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839125BD86190063829F /* WeightProtocol.swift */; };
 		844F839825BD86480063829F /* TimerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839725BD86480063829F /* TimerHandler.swift */; };
 		844F839B25BD92E40063829F /* UniverseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839A25BD92E40063829F /* UniverseViewModel.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		8446686625C6E302008A1D05 /* GalaxyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyViewController.swift; sourceTree = "<group>"; };
 		8446686925C70765008A1D05 /* GalaxyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyViewModel.swift; sourceTree = "<group>"; };
+		8446687025C71ADD008A1D05 /* UniverseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseCell.swift; sourceTree = "<group>"; };
+		8446687525C71B0C008A1D05 /* GalaxyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyCell.swift; sourceTree = "<group>"; };
 		844F839125BD86190063829F /* WeightProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightProtocol.swift; sourceTree = "<group>"; };
 		844F839725BD86480063829F /* TimerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHandler.swift; sourceTree = "<group>"; };
 		844F839A25BD92E40063829F /* UniverseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseViewModel.swift; sourceTree = "<group>"; };
@@ -75,10 +79,20 @@
 		8446686E25C707A0008A1D05 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				84564D2525B29C6100E6D747 /* UniverseViewController.swift */,
+				8446687325C71AE2008A1D05 /* UniverseViewController */,
 				8446686625C6E302008A1D05 /* GalaxyViewController.swift */,
+				8446687525C71B0C008A1D05 /* GalaxyCell.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8446687325C71AE2008A1D05 /* UniverseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84564D2525B29C6100E6D747 /* UniverseViewController.swift */,
+				8446687025C71ADD008A1D05 /* UniverseCell.swift */,
+			);
+			path = UniverseViewController;
 			sourceTree = "<group>";
 		};
 		844F839425BD86250063829F /* Protocols */ = {
@@ -207,10 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8446687625C71B0C008A1D05 /* GalaxyCell.swift in Sources */,
 				84564D2625B29C6100E6D747 /* UniverseViewController.swift in Sources */,
 				8454722625B3BD14002272CC /* UniverseTimer.swift in Sources */,
 				8446686A25C70765008A1D05 /* GalaxyViewModel.swift in Sources */,
 				84564D4025B2B61900E6D747 /* Galaxy.swift in Sources */,
+				8446687125C71ADD008A1D05 /* UniverseCell.swift in Sources */,
 				84564D4325B2B63000E6D747 /* Universe.swift in Sources */,
 				844F839825BD86480063829F /* TimerHandler.swift in Sources */,
 				84564D3725B2B57E00E6D747 /* Satellite.swift in Sources */,

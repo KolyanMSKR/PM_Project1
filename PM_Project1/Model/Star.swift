@@ -36,7 +36,6 @@ class Star {
     var starMassLimit: UInt
     var starRadiusLimit: UInt
     
-    weak var starPlanetSystem: StarPlanetSystem?
     weak var delegate: BlackholeDelegate?
     
     init(name: String, starMassLimit: UInt, starRadiusLimit: UInt) {

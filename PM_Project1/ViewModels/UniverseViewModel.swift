@@ -39,6 +39,10 @@ class UniverseViewModel {
         return galaxies[indexPath.row].name
     }
     
+    func galaxyMass(for indexPath: IndexPath) -> UInt {
+        return galaxies[indexPath.row].mass
+    }
+    
     func galaxyViewModel(for indexPath: IndexPath) -> GalaxyViewModel {
         return GalaxyViewModel(galaxy: galaxies[indexPath.row])
     }

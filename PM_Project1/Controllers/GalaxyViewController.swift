@@ -40,7 +40,8 @@ extension GalaxyViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalaxyCell.cellID,
                                                       for: indexPath) as! GalaxyCell
         
-        cell.galaxyNameLabel.text = viewModel?.starName(for: indexPath)
+        cell.starPlanetSystemNameLabel.text = viewModel?.starName(for: indexPath)
+        cell.starPlanetSystemMassLabel.text = String((viewModel?.starPlanetSystemMass(for: indexPath))!)
 
         return cell
     }
@@ -77,44 +78,6 @@ fileprivate extension GalaxyViewController {
         layout.itemSize = CGSize(width: cellWidthHeightConstant, height: 44)
         
         return layout
-    }
-    
-}
-
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-
-class GalaxyCell: UICollectionViewCell {
-    
-    static var cellID = "GalaxyCell"
-    
-    let galaxyNameLabel = UILabel()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.backgroundColor = .green
-        galaxyNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(galaxyNameLabel)
-        contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setConstraints() {
-        NSLayoutConstraint.activate([
-            galaxyNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            galaxyNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
     }
     
 }

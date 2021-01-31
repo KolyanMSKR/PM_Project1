@@ -40,6 +40,7 @@ extension UniverseViewController: UICollectionViewDataSource, UICollectionViewDe
                                                       for: indexPath) as! UniverseCell
         
         cell.galaxyNameLabel.text = viewModel.galaxyName(for: indexPath)
+        cell.galaxyMassLabel.text = String(viewModel.galaxyMass(for: indexPath))
 
         return cell
     }
@@ -82,44 +83,6 @@ fileprivate extension UniverseViewController {
         layout.itemSize = CGSize(width: cellWidthHeightConstant, height: 44)
         
         return layout
-    }
-    
-}
-
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------------------------
-
-class UniverseCell: UICollectionViewCell {
-    
-    static var cellID = "UniverseCell"
-    
-    let galaxyNameLabel = UILabel()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.backgroundColor = .yellow
-        galaxyNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(galaxyNameLabel)
-        contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setConstraints() {
-        NSLayoutConstraint.activate([
-            galaxyNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            galaxyNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
     }
     
 }

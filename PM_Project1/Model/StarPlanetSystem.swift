@@ -16,14 +16,12 @@ class StarPlanetSystem {
     var massLimit: UInt?
     var radiusLimit: UInt?
     
-    weak var galaxy: Galaxy?
     weak var delegate: GalaxyDelegate?
     
     init(name: String, starMassLimit: UInt, starRadiusLimit: UInt) {
         self.name = name
         self.star = Star(name: name, starMassLimit: starMassLimit, starRadiusLimit: starRadiusLimit)
-        self.star.starPlanetSystem = self
-        print("star planet system has created in galaxy. \(galaxy?.name)")
+        print("star planet system has created")
     }
     
 }
