@@ -18,6 +18,12 @@ class GalaxyViewController: UIViewController, UICollectionViewDelegate {
         
         setupCollectionView()
         
+        viewModel?.dataReload = { [weak self] in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+        
     }
     
 }

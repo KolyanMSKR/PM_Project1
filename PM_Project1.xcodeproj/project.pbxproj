@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8446686725C6E302008A1D05 /* GalaxyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446686625C6E302008A1D05 /* GalaxyViewController.swift */; };
+		8446686A25C70765008A1D05 /* GalaxyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446686925C70765008A1D05 /* GalaxyViewModel.swift */; };
 		844F839225BD86190063829F /* WeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839125BD86190063829F /* WeightProtocol.swift */; };
 		844F839825BD86480063829F /* TimerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839725BD86480063829F /* TimerHandler.swift */; };
-		844F839B25BD92E40063829F /* UniverseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839A25BD92E40063829F /* UniverseModel.swift */; };
+		844F839B25BD92E40063829F /* UniverseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F839A25BD92E40063829F /* UniverseViewModel.swift */; };
 		8450EED925BDDB00005DB66E /* BlackholeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450EED825BDDB00005DB66E /* BlackholeDelegate.swift */; };
 		8454722625B3BD14002272CC /* UniverseTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454722525B3BD14002272CC /* UniverseTimer.swift */; };
 		84564D2225B29C6100E6D747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84564D2125B29C6100E6D747 /* AppDelegate.swift */; };
@@ -29,9 +30,10 @@
 
 /* Begin PBXFileReference section */
 		8446686625C6E302008A1D05 /* GalaxyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyViewController.swift; sourceTree = "<group>"; };
+		8446686925C70765008A1D05 /* GalaxyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyViewModel.swift; sourceTree = "<group>"; };
 		844F839125BD86190063829F /* WeightProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightProtocol.swift; sourceTree = "<group>"; };
 		844F839725BD86480063829F /* TimerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHandler.swift; sourceTree = "<group>"; };
-		844F839A25BD92E40063829F /* UniverseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseModel.swift; sourceTree = "<group>"; };
+		844F839A25BD92E40063829F /* UniverseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseViewModel.swift; sourceTree = "<group>"; };
 		8450EED825BDDB00005DB66E /* BlackholeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackholeDelegate.swift; sourceTree = "<group>"; };
 		8454722525B3BD14002272CC /* UniverseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseTimer.swift; sourceTree = "<group>"; };
 		84564D1E25B29C6100E6D747 /* PM_Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PM_Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8446686D25C7078C008A1D05 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				844F839A25BD92E40063829F /* UniverseViewModel.swift */,
+				8446686925C70765008A1D05 /* GalaxyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8446686E25C707A0008A1D05 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84564D2525B29C6100E6D747 /* UniverseViewController.swift */,
+				8446686625C6E302008A1D05 /* GalaxyViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		844F839425BD86250063829F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +116,8 @@
 				8454722525B3BD14002272CC /* UniverseTimer.swift */,
 				844F839425BD86250063829F /* Protocols */,
 				84564D4525B2B67500E6D747 /* Model */,
-				84564D2525B29C6100E6D747 /* UniverseViewController.swift */,
-				8446686625C6E302008A1D05 /* GalaxyViewController.swift */,
+				8446686D25C7078C008A1D05 /* ViewModels */,
+				8446686E25C707A0008A1D05 /* Controllers */,
 				84564D2A25B29C6600E6D747 /* Assets.xcassets */,
 				84564D2C25B29C6600E6D747 /* LaunchScreen.storyboard */,
 				84564D2F25B29C6600E6D747 /* Info.plist */,
@@ -108,7 +128,6 @@
 		84564D4525B2B67500E6D747 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				844F839A25BD92E40063829F /* UniverseModel.swift */,
 				84564D4225B2B63000E6D747 /* Universe.swift */,
 				84564D3F25B2B61900E6D747 /* Galaxy.swift */,
 				84928F1725B2DE0A00967E05 /* StarPlanetSystem.swift */,
@@ -190,6 +209,7 @@
 			files = (
 				84564D2625B29C6100E6D747 /* UniverseViewController.swift in Sources */,
 				8454722625B3BD14002272CC /* UniverseTimer.swift in Sources */,
+				8446686A25C70765008A1D05 /* GalaxyViewModel.swift in Sources */,
 				84564D4025B2B61900E6D747 /* Galaxy.swift in Sources */,
 				84564D4325B2B63000E6D747 /* Universe.swift in Sources */,
 				844F839825BD86480063829F /* TimerHandler.swift in Sources */,
@@ -197,7 +217,7 @@
 				84928F1825B2DE0A00967E05 /* StarPlanetSystem.swift in Sources */,
 				8456E02A25C5CF210044F861 /* GalaxyDelegate.swift in Sources */,
 				84564D2225B29C6100E6D747 /* AppDelegate.swift in Sources */,
-				844F839B25BD92E40063829F /* UniverseModel.swift in Sources */,
+				844F839B25BD92E40063829F /* UniverseViewModel.swift in Sources */,
 				8446686725C6E302008A1D05 /* GalaxyViewController.swift in Sources */,
 				84564D3D25B2B60500E6D747 /* Planet.swift in Sources */,
 				8450EED925BDDB00005DB66E /* BlackholeDelegate.swift in Sources */,

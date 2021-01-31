@@ -18,11 +18,17 @@ class Galaxy {
     var name: String
     var age: UInt = 0
     var type: GalaxyType = GalaxyType.allCases.randomElement()!
-    var starPlanetSystems: [StarPlanetSystem] = []
+    var starPlanetSystems: [StarPlanetSystem] = [] {
+        didSet {
+            dataReload?()
+        }
+    }
     var blackholes: [Star] = []
     var starMassLimit: UInt
     var starRadiusLimit: UInt
     weak var universe: Universe?
+    
+    var dataReload: (() -> ())?
     
     init(name: String, starMassLimit: UInt, starRadiusLimit: UInt) {
         self.name = name
